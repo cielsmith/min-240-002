@@ -12,11 +12,10 @@
                 background-image:radial-gradient(circle, white 60%, gray);
                 border: solid black 5px;
                 border-radius: 50%;
-                animation: fadeIn 6s;
+                animation: fadeIn 2s;
             }
             @keyframes fadeIn{
                 from{opacity:0}
-                50%{opacity:0}
                 to{opacity:1}
             }
             #metal {
@@ -77,7 +76,26 @@
                 position: fixed;
                 top:50%;
                 left:20%;
+                
             }
+            .light {
+                width: 5px;
+                height: 5px;
+                animation: xmaslight 5s steps(6) infinite;
+                animation-delay: 7s;
+                border-radius: 50%;
+                background-image: radial-gradient(circle, white, red);
+            }
+            
+            @keyframes xmaslight {
+                from{opacity: 1; transform:translateY(0)}
+                16%{opacity:0; transform:translateY(0)}
+                32%{opacity:1; transform:translateY(10%)}
+                48%{opacity:0; transform:translateY(0)}
+                64%{opacity:1; transform:translateY(10%)}
+                to{opacity: 0; transform: translateY(10%)}
+            }
+           
             #right-tree {
                 position: fixed;
                 top:50%;
@@ -92,12 +110,14 @@
                 <div class="tree-layer"></div>
                 <div class="tree-layer"></div>
                 <div class="tree-log"></div>
+                <div class="light"></div>
             </div>
             <div id="right-tree">
                 <div class="tree-layer"></div>
                 <div class="tree-layer"></div>
                 <div class="tree-layer"></div>
                 <div class="tree-log"></div>
+                <div class="light"></div>
             </div>
             <div id="metal"></div>
             <div id="base"></div>
