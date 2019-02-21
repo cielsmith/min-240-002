@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #globe {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                height: 400px;
+                width: 400px;
+                transform: translate(-50%, -50%);
+                background-image:radial-gradient(circle, white 60%, gray);
+                border: solid black 5px;
+                border-radius: 50%;
+                animation: fadeIn 6s;
+            }
+            @keyframes fadeIn{
+                from{opacity:0}
+                50%{opacity:0}
+                to{opacity:1}
+            }
+            #metal {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: gray;
+                width: 180px;
+                height:45px;
+                border-radius: 25%;
+                border: solid black 1px;
+            }
+            #base {
+                position: absolute;
+                top: 137%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: saddlebrown;
+                width: 300px;
+                height: 300px;
+                border: solid black 3px;
+                clip-path: polygon(20% 0%, 80% 0%, 100% 30%, 0 30%);
+                filter:drop-shadow(10px, 10px);
+            }
+            .tree {
+                width: 120px;
+            }
+            .tree-layer, .tree-log {
+                margin: 0 auto;
+            }
+            .tree-layer {
+                width: 0;
+                height: 0;
+                border-left: 40px solid transparent;
+                border-right: 40px solid transparent;
+                border-bottom: 60px solid green;
+            }
+            .tree-layer:nth-child(2) {
+                margin-top: -30px;
+                border-left-width:50px;
+                border-right-width: 50px;
+                border-bottom-width: 80px;
+            }
+            .tree-layer:nth-child(3) {
+                margin-top: -50px;
+                border-left-width:60px;
+                border-right-width: 60px;
+                border-bottom-width: 100px;
+            }
+            .tree-log {
+                width: 20px;
+                height: 30px;
+                background-color:hsl(30, 60%, 50%);
+                
+            }
+            #left-tree {
+                position: fixed;
+                top:50%;
+                left:20%;
+            }
+            #right-tree {
+                position: fixed;
+                top:50%;
+                left:50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="globe">
+            <div id="left-tree">
+                <div class="tree-layer"></div>
+                <div class="tree-layer"></div>
+                <div class="tree-layer"></div>
+                <div class="tree-log"></div>
+            </div>
+            <div id="right-tree">
+                <div class="tree-layer"></div>
+                <div class="tree-layer"></div>
+                <div class="tree-layer"></div>
+                <div class="tree-log"></div>
+            </div>
+            <div id="metal"></div>
+            <div id="base"></div>
+        </div>
+        
+    </body>
+
+</html>
