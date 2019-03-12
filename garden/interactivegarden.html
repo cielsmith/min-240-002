@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                height: 500px;
+                width: 2000px;
+            }
+            #sun {
+                position:absolute;
+                top: 20px;
+                left: 20px;
+                height: 300px;
+                width: 300px;
+                color:yellow;
+                border-radius: 60%;
+                background-image:radial-gradient(circle, yellow, white);
+                z-index:1;
+            }
+            #rays {
+                position:absolute;
+                top:-50px;
+                left:-50px;
+                opacity: 0.4;
+                z-index:0;
+            }
+            #rays:hover{
+                 animation: spin 40s infinite linear;
+            }
+            @keyframes spin {
+                from {transform: rotate(0deg); }
+                to {transform: rotate(360deg);}
+            }
+            
+            .grass {
+                    background-color: green;
+                    background: repeating-linear-gradient(84deg, yellowgreen .2%, limegreen .3%, yellow .4%, lime .5%, greenyellow .6%, green .8% );
+                    bottom:-575px;
+                    height: 100px;
+                    left:0;
+                    position: absolute;
+                    width: 2000px;
+                    z-index: 300;
+                }
+            #garden {
+                position:absolute;
+                top: 300px;
+                left: 100px;
+            }
+            .tree {
+                width: 120px;
+            }
+            .tree-layer {
+                z-index: 2;
+                position:relative;
+                top: 300px;
+                left: -80px;
+                width: 130px;
+                height: 130px;
+                border-radius: 60%;
+                background-color: green;
+                transition-property: background-color;
+                transition-duration: 3s;
+            }
+            
+                   
+            .tree-layer:nth-child(2) {
+                top: 100px;
+                left: -20px;
+            }
+            .tree-layer:nth-child(3) {
+                top: 40px;
+                left: 40px;
+            }
+            .tree-layer:nth-child(4) {
+                left: 10px;
+                top: -20px;
+            }
+            .tree-layer:nth-child(5){
+                top: -100px;
+            }
+            .tree-layer:nth-child(6){
+                top: -230px;
+                left: 60px;
+            }
+            .tree-log {
+                z-index: 1;
+                top: 400px;
+                left: 20px;
+                width: 70px;
+                height: 300px;
+                background-color:hsl(30, 60%, 50%);
+                position:absolute;
+            }
+            #left-tree {
+                position: absolute;
+                top:450px;
+                left:300px;
+                
+            }
+            #fall {
+                position:absolute;
+                top: 450px;
+                left: 500px;
+            }
+            #right-tree {
+                position: absolute;
+                top:450px;
+                left:1000px;
+            }
+            p {
+                color:black;
+            }
+            
+
+        </style>
+    </head>
+    <body>
+        <div id="sun">
+            <img id="rays" src="sun-rays-png-36903.png" alt="rays" height="400px" width="400px">
+            <p>Hover the sun to spin the rays!</p>
+        </div>
+        <div id="garden">   
+            <div class="tree" id="left-tree">
+                    <div class="tree-layer spring"></div>
+                    <div class="tree-layer spring"></div>                    
+                    <div class="tree-layer spring"></div>
+                    <div class="tree-layer spring"></div>
+                    <div class="tree-layer spring"></div>                    
+                    <div class="tree-layer spring"></div>
+                    <div class="tree-log"></div>
+            </div>
+            <button id="fall">Click to change season</button> 
+            <div class="tree" id="right-tree">
+                    <div class="tree-layer spring"></div>
+                    <div class="tree-layer spring"></div>                    
+                    <div class="tree-layer spring"></div>
+                    <div class="tree-layer spring"></div>
+                    <div class="tree-layer spring"></div>                    
+                    <div class="tree-layer spring"></div>
+                    <div class="tree-log"></div>
+            </div>
+        </div>
+        
+          <div class="grass"></div>   
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     <script>
+         var treelayer = document.getElementsByClassName('tree-layer');
+         var leaves = treelayer.length;
+         fall.onclick = function() {
+            for (var i = 0; i < leaves; ++i) {
+                treelayer[i].style.backgroundColor = 'firebrick';
+                }
+            }
+            </script>
+</html>
