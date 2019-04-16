@@ -64,22 +64,22 @@
             }
             
                    
-            .tree-layer:nth-child(2) {
+            .two {
                 top: 100px;
                 left: -20px;
             }
-            .tree-layer:nth-child(3) {
+            .three {
                 top: 40px;
                 left: 40px;
             }
-            .tree-layer:nth-child(4) {
+            .four {
                 left: 10px;
                 top: -20px;
             }
-            .tree-layer:nth-child(5){
+            .five {
                 top: -100px;
             }
-            .tree-layer:nth-child(6){
+            .six{
                 top: -230px;
                 left: 60px;
             }
@@ -123,32 +123,33 @@
         <div id="garden">   
             <div class="tree" id="left-tree">
                     <div class="tree-layer spring"></div>
-                    <div class="tree-layer spring"></div>                    
-                    <div class="tree-layer spring"></div>
-                    <div class="tree-layer spring"></div>
-                    <div class="tree-layer spring"></div>                    
-                    <div class="tree-layer spring"></div>
+                    <div class="tree-layer spring two"></div>                    
+                    <div class="tree-layer spring three"></div>
+                    <div class="tree-layer spring four"></div>
+                    <div class="tree-layer spring five"></div>                    
+                    <div class="tree-layer spring six"></div>
                     <div class="tree-log"></div>
             </div>
             <button id="fall">Click to change season</button> 
             <div class="tree" id="right-tree">
                     <div class="tree-layer spring"></div>
-                    <div class="tree-layer spring"></div>                    
-                    <div class="tree-layer spring"></div>
-                    <div class="tree-layer spring"></div>
-                    <div class="tree-layer spring"></div>                    
-                    <div class="tree-layer spring"></div>
+                    <div class="tree-layer spring two"></div>                    
+                    <div class="tree-layer spring three"></div>
+                    <div class="tree-layer spring four"></div>
+                    <div class="tree-layer spring five"></div>                    
+                    <div class="tree-layer spring six"></div>
                     <div class="tree-log"></div>
             </div>
         </div>
         
           <div class="grass"></div>   
     </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
      <script>
          var treelayer = document.getElementsByClassName('tree-layer');
          var leaves = treelayer.length;
+         var fall = document.querySelector('#fall');
          fall.onclick = function() {
+             /* onclick is a part of the javascript globaleventhandlers mix in sort */
             for (var i = 0; i < leaves; ++i) {
                 treelayer[i].style.backgroundColor = 'firebrick';
                 }
